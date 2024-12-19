@@ -977,6 +977,21 @@ Annual Anime Grand Prix.`,
 // 2) While chaining array methods, print the name of each anime that "includes" the genre action
 
 function highRatedMovies() {
-  const ratedMovies = data.filter((i) => data.ratings > 8.0);
-  data.for;
+  const ratedMovies = data.filter(
+    (movie) => movie.score > 8.0 && movie.type == "Movie"
+  );
+  ratedMovies.forEach((movie) => {
+    console.log(movie.title);
+  });
 }
+
+function genreSearch(genre) {
+  data.forEach((anime) => {
+    if (anime.stringGenres.includes(genre) && anime.type == "TV") {
+      console.log(anime.title);
+    }
+  });
+}
+
+highRatedMovies();
+genreSearch("action");
